@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="dallas.scalespractice.LaunchPage"
-    android:background="@android:color/holo_blue_dark">
+    android:background="#e9e9e9">
 
     <include layout="@layout/content_launch_page"
              android:id="@+id/include"/>
@@ -16,6 +16,8 @@
 
     <LinearLayout
         android:orientation="horizontal"
+        android:layout_marginTop="280dp"
+        android:layout_marginBottom="120dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
@@ -23,32 +25,53 @@
         android:layout_alignStart="@+id/include">
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Scales Practice"
+            android:text="Learn"
             android:id="@+id/scalePracticeActivityBtn"
             android:layout_weight="1"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="75dp"
-            android:layout_marginBottom="75dp"
-            android:background="@android:color/holo_red_light"
-            android:textSize="30sp"/>
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:background="#4ac0f6"
+            android:textSize="27sp"/>
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="75dp"
-            android:layout_marginBottom="75dp"
-            android:text="Random Scales"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="20dp"
+            android:text="Practice"
             android:id="@+id/randomScalesActivityBtn"
-            android:background="@android:color/holo_orange_light"
-            android:textSize="30sp"/>
+            android:background="#4ac0f6"
+            android:textSize="27sp"/>
 
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Welcome to Scales Practice!"
+        android:id="@+id/welcomeText"
+        android:layout_marginTop="80dp"
+        android:textSize="27sp"
+        android:paddingTop="5dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000000"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:padding="10dp"
+        android:text="Please select an option..."
+        android:id="@+id/welcomeText2"
+        android:layout_below="@+id/welcomeText"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000000"/>
 
 </RelativeLayout>
