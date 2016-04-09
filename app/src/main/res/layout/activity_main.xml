@@ -46,6 +46,7 @@
 
 
     <RadioGroup
+        android:id="@+id/scaleRadioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -65,7 +66,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/accidentalScaleRadio"
+            android:text="@string/allScaleRadio"
             android:id="@+id/radioAccidentalScales"
             android:checked="false"
             android:layout_gravity="center"/>

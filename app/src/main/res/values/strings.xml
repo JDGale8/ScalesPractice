@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Scales Practice</string>
-    <string name="accidentalScaleRadio">Accidental Scales</string>
+    <string name="allScaleRadio">All Scales</string>
     <string name="naturalScaleRadio">Natural Scales</string>
 </resources>
