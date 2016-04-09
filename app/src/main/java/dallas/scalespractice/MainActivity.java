@@ -9,6 +9,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
@@ -23,9 +24,11 @@ public class MainActivity extends AppCompatActivity {
     private TextView mMajMinText;
     private ImageButton mSettingsBtn;
     private Button mScaleBtn;
-    private MajorScalesPractice mMajorScales = new MajorScalesPractice();
-    private RadioGroup mScaleTypeRadio;
-    private RadioGroup mMajMinRadio;
+    private RadioButton mAllScaleRadio;
+    private RadioButton mNaturalScaleRadio;
+    private RadioButton mMinorScaleRadio;
+    private RadioButton mMajorScaleRadio;
+    private RadioButton mBothMinMajScaleRadio;
     private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
 
     @Override
@@ -37,8 +40,11 @@ public class MainActivity extends AppCompatActivity {
         mSettingsBtn = (ImageButton) findViewById(R.id.settingsButton);
         mScaleText = (TextView) findViewById(R.id.scaleText);
         mMajMinText = (TextView) findViewById(R.id.majorMinorText);
-        mScaleTypeRadio = (RadioGroup) findViewById(R.id.scaleRadioGroup);
-        mMajMinRadio = (RadioGroup) findViewById(R.id.majMinRadioGroup);
+        mAllScaleRadio = (RadioButton) findViewById(R.id.allScaleRadio);
+        mNaturalScaleRadio = (RadioButton) findViewById(R.id.naturalScaleRadio);
+        mMinorScaleRadio = (RadioButton) findViewById(R.id.minorScaleRadio);
+        mMajorScaleRadio = (RadioButton) findViewById(R.id.majorScaleRadio);
+        mBothMinMajScaleRadio = (RadioButton) findViewById(R.id.bothMinMajScaleRadio);
 
 
         // Animations
@@ -51,38 +57,24 @@ public class MainActivity extends AppCompatActivity {
                 // when the button is clicked, it needs to update mScaleText with a new scale
                 String scale = "";
                 //randomly select either a natural or accidental scale depending on the radio button
-                scale = "";
-
-                int selMajMin = mMajMinRadio.getCheckedRadioButtonId();
-
-                int majScaleId = 2131492951;
-                int minScaleId = 2131492952;
-                int bothScaleId = 2131492953;
-
-                int selScaleType = mScaleTypeRadio.getCheckedRadioButtonId();
-
-                Log.d(TAG, "int value of maj/min radio button is:" +selScaleType);
-
-                int naturalScaleId = 2131492949;
-                int allScaleId = 2131492950;
 
                 //if / else statement depending on if our choice is major or minor
-                if(selMajMin==majScaleId) {
+                if(mMajorScaleRadio.isChecked()) {
                     mMajMinText.setText("Major");
-                    if (selScaleType == naturalScaleId) {
+                    if (mNaturalScaleRadio.isChecked()) {
                         scale = MajorScalesPractice.getSimpleMScale();
-                    } else if (selScaleType == allScaleId) {
+                    } else if (mAllScaleRadio.isChecked()) {
                         scale = MajorScalesPractice.getFullMScale();
                     }
 
                     //update the scale
                     mScaleText.setText(scale);
                 }
-                else if(selMajMin==minScaleId) {
+                else if(mMinorScaleRadio.isChecked()) {
                     mMajMinText.setText("Minor");
-                    if (selScaleType == naturalScaleId) {
+                    if (mNaturalScaleRadio.isChecked()) {
                         scale = MajorScalesPractice.getSimpleMScale();
-                    } else if (selScaleType == allScaleId) {
+                    } else if (mAllScaleRadio.isChecked()) {
                         scale = MajorScalesPractice.getFullMScale();
                     }
 
@@ -92,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-                else if(selMajMin==bothScaleId) {
+                else if(mBothMinMajScaleRadio.isChecked()) {
                     Random randomGenerator = new Random();
                     int randomInt = randomGenerator.nextInt(2);
                     if (randomInt==0) {
@@ -101,9 +93,9 @@ public class MainActivity extends AppCompatActivity {
                     if (randomInt==1) {
                         mMajMinText.setText("Minor");
                     }
-                    if (selScaleType == naturalScaleId) {
+                    if (mNaturalScaleRadio.isChecked()) {
                         scale = MajorScalesPractice.getSimpleMScale();
-                    } else if (selScaleType == allScaleId) {
+                    } else if (mAllScaleRadio.isChecked()) {
                         scale = MajorScalesPractice.getFullMScale();
                     }
 

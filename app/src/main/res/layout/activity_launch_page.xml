@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="dallas.scalespractice.LaunchPage"
+    android:background="@android:color/holo_blue_dark">
+
+    <include layout="@layout/content_launch_page"
+             android:id="@+id/include"/>
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/include"
+        android:layout_alignStart="@+id/include">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Scales Practice"
+            android:id="@+id/scalePracticeActivityBtn"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="75dp"
+            android:layout_marginBottom="75dp"
+            android:background="@android:color/holo_red_light"
+            android:textSize="30sp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="75dp"
+            android:layout_marginBottom="75dp"
+            android:text="Random Scales"
+            android:id="@+id/randomScalesActivityBtn"
+            android:background="@android:color/holo_orange_light"
+            android:textSize="30sp"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

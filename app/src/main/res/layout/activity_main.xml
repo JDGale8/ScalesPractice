@@ -57,7 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/naturalScaleRadio"
-            android:id="@+id/radioNaturalScaleRadio"
+            android:id="@+id/naturalScaleRadio"
             android:gravity="center"
             android:layout_marginTop="21dp"
             android:checked="true"
@@ -67,7 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/allScaleRadio"
-            android:id="@+id/radioAccidentalScaleRadio"
+            android:id="@+id/allScaleRadio"
             android:checked="false"
             />
 
@@ -104,7 +104,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Both"
-            android:id="@+id/allMajMinScaleRadio"
+            android:id="@+id/bothMinMajScaleRadio"
             android:checked="false"
             />
 
