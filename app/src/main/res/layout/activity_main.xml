@@ -39,25 +39,24 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Major"
         android:paddingBottom="30dp"
-        android:id="@+id/majorText"
-        android:layout_alignBottom="@+id/scaleText"
-        android:layout_toRightOf="@+id/scaleText"
-        android:layout_toEndOf="@+id/scaleText"/>
+        android:id="@+id/majorMinorText"
+        android:layout_below="@+id/scaleText"
+        android:layout_centerHorizontal="true"/>
 
 
     <RadioGroup
         android:id="@+id/scaleRadioGroup"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingBottom="30dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:paddingBottom="30dp">
+        android:layout_centerHorizontal="true">
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/naturalScaleRadio"
-            android:id="@+id/radioNaturalScales"
+            android:id="@+id/radioNaturalScaleRadio"
             android:gravity="center"
             android:layout_marginTop="21dp"
             android:checked="true"
@@ -67,7 +66,44 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/allScaleRadio"
-            android:id="@+id/radioAccidentalScales"
+            android:id="@+id/radioAccidentalScaleRadio"
+            android:checked="false"
+            android:layout_gravity="center"/>
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/majMinRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/newScaleBtn"
+        android:layout_toEndOf="@+id/newScaleBtn">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Major"
+            android:id="@+id/majorScaleRadio"
+            android:gravity="center"
+            android:layout_marginTop="21dp"
+            android:checked="true"
+            android:layout_gravity="center"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Minor"
+            android:id="@+id/minorScaleRadio"
+            android:checked="false"
+            android:layout_gravity="center"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Both"
+            android:id="@+id/allMajMinScaleRadio"
             android:checked="false"
             android:layout_gravity="center"/>
 
