@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.os.Vibrator;
 
 public class LaunchPage extends AppCompatActivity {
 
@@ -16,14 +18,17 @@ public class LaunchPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch_page);
 
-        final Button loadRandomBtn = (Button) findViewById(R.id.randomScalesActivityBtn);
-        final Button loadScalesBtn = (Button) findViewById(R.id.scalePracticeActivityBtn);
+        final Vibrator vibr = (Vibrator)getSystemService(this.VIBRATOR_SERVICE);
+
+        final ImageButton loadRandomBtn = (ImageButton) findViewById(R.id.practiceBtn);
+        final ImageButton loadScalesBtn = (ImageButton) findViewById(R.id.learnBtn);
 
         loadRandomBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent mainIntent = new Intent("dallas.scalespractice.MainActivity");
                 startActivity(mainIntent);
+                vibr.vibrate(28);
             }
         });
 
