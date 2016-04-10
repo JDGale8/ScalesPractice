@@ -1,5 +1,6 @@
 package dallas.scalespractice;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.os.Vibrator;
 
 import java.util.Random;
 
@@ -31,10 +33,13 @@ public class MainActivity extends AppCompatActivity {
     private RadioButton mBothMinMajScaleRadio;
     private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        final Vibrator vibr = (Vibrator)getSystemService(this.VIBRATOR_SERVICE);
 
         mScaleBtn =  (Button) findViewById(R.id.newScaleBtn);
         mSettingsBtn = (ImageButton) findViewById(R.id.settingsButton);
@@ -45,11 +50,6 @@ public class MainActivity extends AppCompatActivity {
         mMinorScaleRadio = (RadioButton) findViewById(R.id.minorScaleRadio);
         mMajorScaleRadio = (RadioButton) findViewById(R.id.majorScaleRadio);
         mBothMinMajScaleRadio = (RadioButton) findViewById(R.id.bothMinMajScaleRadio);
-
-
-        // Animations
-        //Animation pulse = AnimationUtils.loadAnimation(this, R.anim.pulse);
-
 
         View.OnClickListener newScaleListener = new View.OnClickListener() {
             @Override
@@ -109,6 +109,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mSettingsBtn.startAnimation(buttonClick);
+                vibr.vibrate(28);
+                startActivity(new Intent(MainActivity.this, RandomSettings.class));
+
             }
 
         };
